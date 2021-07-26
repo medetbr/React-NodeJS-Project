@@ -1,16 +1,18 @@
 {
   "name": "Back-End",
+  "proxy": "http://127.0.0.1:5000",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.12"
   }
