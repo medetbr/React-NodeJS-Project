@@ -21,7 +21,33 @@ h2{
   font-size: 1.6rem;
   padding: 1rem 0;
 }
-
+ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+li{
+  margin-top: 1rem;
+}
+button{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #a4a4a4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+button.primary{
+  background-color: #f0c040;
+}
+button:hover{
+  border: 0.1rem solid #203040;
+  background-color: #eebe3b;
+}
+button.block{
+  width: 100%;
+}
 .grid-container{
   display: grid;
   grid-template-areas: 'header' 'main' 'footer';
@@ -56,6 +82,15 @@ a:hover{
   justify-content: space-between;
   align-items: center;
 }
+.row.top{
+  align-items: flex-start;
+}
+.col-1{
+  flex: 1 1 25rem;
+}
+.col-2{
+  flex: 2 1 50rem;
+}
 header a {
   color: #ffffff;
   padding: 1rem;
@@ -77,6 +112,9 @@ img.medium{
  max-width: 29rem;
  width: 100%;
 }
+img.large{
+  width: 100%;
+}
 .card{
   border: solid 0.1rem #c0c0c0;
   border-radius: 0.5rem;
@@ -93,11 +131,17 @@ img.medium{
 .price{
   font-size: 2rem;
 }
-.raiting span i{
+.rating span i{
 color: #f0c040;
 margin: 0.1rem;
 }
-.raiting-show{
+.rating-show{
   font-weight: 700;
   padding-right: 0.6rem;
+}
+.success{
+  color: #20a020;
+}
+.error{
+  color: #a02020;
 }

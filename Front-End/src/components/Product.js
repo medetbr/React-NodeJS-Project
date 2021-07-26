@@ -1,4 +1,5 @@
-import Raiting from "./Raiting"
+import React from "react";
+import Raiting from "./Rating"
 
 const Product = (props) => {
    const {product} = props
