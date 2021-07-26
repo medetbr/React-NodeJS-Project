@@ -49,18 +49,7 @@ const data = {
             brand: "Oppo",
             name: "Reno 5 ",
             price: "6050",
-            rating: "4.0",
-            numReviews: "75",
-            category: "Phone",
-            image: "/images/product.jpg",
-            description:" Oppo Reno 5 128 GB"
-        },
-        {
-            _id: "5",
-            brand: "Oppo",
-            name: "Reno 5 ",
-            price: "6050",
-            rating: "4.0",
+            rating: "0.7",
             numReviews: "75",
             category: "Phone",
             image: "/images/product.jpg",
@@ -68,6 +57,17 @@ const data = {
         },
         {
             _id: "6",
+            brand: "Oppo",
+            name: "Reno 5 ",
+            price: "6050",
+            rating: "1.0",
+            numReviews: "75",
+            category: "Phone",
+            image: "/images/product.jpg",
+            description:" Oppo Reno 5 128 GB"
+        },
+        {
+            _id: "7",
             brand: "Oppo",
             name: "Reno 5 ",
             price: "6050",

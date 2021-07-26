@@ -70,6 +70,8 @@ a.brand{
 }
 img{
   border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: #ffffff;
 }
 img.medium{
  max-width: 29rem;
@@ -94,4 +96,8 @@ img.medium{
 .raiting span i{
 color: #f0c040;
 margin: 0.1rem;
+}
+.raiting-show{
+  font-weight: 700;
+  padding-right: 0.6rem;
 }
