@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 import Rating from "../components/Rating";
-import data from "../data";
+import { detailsProduct } from "../redux/actions/productAction";
+
 
 const ProductScreen = (props) => {
    
-    const product = data.products.find((x) => x._id === props.match.params.id)
-   
-    if (!product) {
-        <div>
-            Product Not Found
-        </div>
-    }
+    const dispatch = useDispatch();
+   // const product = data.products.find((x) => x._id === props.match.params.id)
+   const productDetails = useSelector(state => state.productDetails)
+    const { loading, error, product } = productDetails;
+    const productID = props.match.params.id;
+
+    useEffect(() => {
+    dispatch(detailsProduct(productID))
+},[dispatch,productID])
 
     return (
-        
-        <div className="row top">
+        <div>
+        {loading ? (
+          <LoadingBox />
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
+           <div className="row top">
             <Link to="/">Back to Result</Link>
             <div className="col-2">
             <img className="large" src={product.image} alt={product.name} />
@@ -60,6 +71,9 @@ const ProductScreen = (props) => {
             </div>
             </div>
         </div>
+        )}
+      </div>
+       
     )
 }
 export default ProductScreen
