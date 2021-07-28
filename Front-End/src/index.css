@@ -29,19 +29,22 @@ ul{
 li{
   margin-top: 1rem;
 }
-button{
+input,select,textarea,button{
   padding: 1rem;
   border-radius: 0.5rem;
   border: 0.1rem solid #a4a4a4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f8f8;
+ 
+}
+button{
+   background-color: #f8f8f8;
   cursor: pointer;
 }
 button.primary{
   background-color: #f0c040;
 }
-button:hover{
+input:hover,textarea:hover,button:hover{
   border: 0.1rem solid #203040;
   background-color: #eebe3b;
 }
