@@ -12,6 +12,7 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
 }
 h1{
   font-size: 1.8rem;
@@ -59,16 +60,18 @@ button.block{
   height: 100%;
 }
 header{
+  
   grid-area: header;
-  background-color: #203040;
+  background-color: #007bff;
+  height: 8rem;
 }
 main{
   grid-area: main;
- padding: 1rem;
+  padding: 8rem 4rem;
 }
 footer{
   grid-area: footer;
-  background-color: #203040;
+  background-color: #007bff;
   color: rgb(240, 248, 255);
   
 }
@@ -106,6 +109,9 @@ a.brand{
 .row.center{
   justify-content: center;
 }
+.row.card{
+  padding-right:10rem;
+}
 img{
   border-radius: 0.5rem;
   padding: 2rem;
@@ -114,15 +120,26 @@ img{
 img.medium{
  max-width: 29rem;
  width: 100%;
+ border-radius: 1rem;
+ 
 }
 img.large{
   width: 100%;
+  max-width: 45rem;
+}
+img.small{
+  max-width: 5rem;
+  width: 100%;
+  border-radius: 1rem;
+}
+.min-30{
+  min-width: 30rem;
 }
 .card{
   border: solid 0.1rem #c0c0c0;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   margin: 1rem;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 }
 .card-body{
   padding: 1rem;
@@ -160,4 +177,22 @@ margin: 0.1rem;
 .alert-danger{
   color: #a02020;
   background-color: #ffe0e0e0;
+}
+.fa-shopping-cart{
+  font-size: 3.6rem;
+  color: #ffffff;
+}
+.badge{
+  background-color: #ff0000;
+  border-radius: 50%;
+  padding: 0.45rem 0.75rem;
+  margin-left: -1.6rem;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.top-right{
+  margin-right: 4rem;
+}
+.top-right:last-child{
+  font-size: 3rem;
 }
