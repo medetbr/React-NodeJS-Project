@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import MessageBox from "../components/MessageBox";
-import { cartAction } from "../redux/actions/cartAction";
+import { addToCart, removeCart } from "../redux/actions/cartAction";
 
 const CartScreen = (props) => {
   const cart = useSelector((state) => state.cart);
@@ -16,12 +16,15 @@ const CartScreen = (props) => {
 
   useEffect(() => {
     if (productID) {
-      dispatch(cartAction(productID, qty));
+      dispatch(addToCart(productID, qty));
     }
   }, [dispatch, productID, qty]);
 
-  const removeFromCartHandler = (id) => {};
-    const checkOutHandler = () => {
+  const removeFromCartHandler = (id) => {
+    dispatch(removeCart(id))
+  };
+   
+  const checkOutHandler = () => {
     props.history.push("/signin?redirect=shipping")
 }
   return (
@@ -30,7 +33,7 @@ const CartScreen = (props) => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <MessageBox>
-            Cart is empty <Link to="/">Go to shopping</Link>
+            Cart is empty <Link style={{ color: "#2020a0"}} to="/">Go to shopping</Link>
           </MessageBox>
         ) : (
           <ul>
@@ -49,7 +52,7 @@ const CartScreen = (props) => {
                       value={item.qty}
                       onChange={(e) =>
                         dispatch(
-                          cartAction(item.product, Number(e.target.value))
+                            addToCart(item.product, Number(e.target.value))
                         )
                       }
                     >

@@ -168,7 +168,7 @@ margin: 0.1rem;
 .alert{
   padding: 1rem;
   border: 0.1rem solid transparent;
-  border: 0.5rem;
+  border-radius: 0.5rem;
 }
 .alert-info{
   color: #2020a0;
