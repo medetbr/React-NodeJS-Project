@@ -6,10 +6,9 @@ import CartScreen from "./screens/CartScreen";
 import { useSelector } from "react-redux";
 
 function App() {
- 
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
- 
+
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -20,9 +19,18 @@ function App() {
             </Link>
           </div>
           <div className="top-right">
-            <Link to="/cart">
-              <i className="fas fa-shopping-cart"><span className="badge">{cartItems.length}</span> </i>             
-            </Link>
+            {
+              <Link to="/cart">
+                {" "}
+                {cartItems.length === 0 ? (
+                  <i className="fas fa-shopping-cart"></i>
+                ) : (
+                  <i className="fas fa-shopping-cart">
+                    <span className="badge">{cartItems.length}</span>{" "}
+                  </i>
+                )}
+              </Link>
+            }
             <Link to="/signin">Sign In</Link>
           </div>
         </header>

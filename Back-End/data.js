@@ -20,7 +20,7 @@ const data = {
     ,
     products: [
         {
-            _id: "1",
+            
             brand: "Oppo",
             name: "Reno 1 ",
             price: "1750",
@@ -32,7 +32,7 @@ const data = {
             description:" Oppo Reno 1 32 GB"
         },
         {
-            _id: "2",
+            
             brand: "Oppo",
             name: "Reno 2 ",
             price: "2550",
@@ -44,7 +44,7 @@ const data = {
             description:" Oppo Reno 2 64 GB"
         },
         {
-            _id: "3",
+           
             brand: "Oppo",
             name: "Reno 3 ",
             price: "3750",
@@ -56,7 +56,7 @@ const data = {
             description:" Oppo Reno 3 64 GB"
         },
         {
-            _id: "4",
+           
             brand: "Oppo",
             name: "Reno 4 ",
             price: "4550",
@@ -68,7 +68,7 @@ const data = {
             description:" Oppo Reno 4 128 GB"
         },
         {
-            _id: "5",
+            
             brand: "Oppo",
             name: "Reno 5 ",
             price: "6050",
@@ -80,9 +80,9 @@ const data = {
             description:" Oppo Reno 5 128 GB"
         },
         {
-            _id: "6",
+           
             brand: "Oppo",
-            name: "Reno 5 ",
+            name: "Reno 6 ",
             price: "6050",
             countInStock : "21",
             rating: "1.0",
@@ -92,9 +92,9 @@ const data = {
             description:" Oppo Reno 5 128 GB"
         },
         {
-            _id: "7",
+            
             brand: "Oppo",
-            name: "Reno 5 ",
+            name: "Reno 7 ",
             price: "6050",
             countInStock : "0",
             rating: "4.0",
