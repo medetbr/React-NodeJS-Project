@@ -12,7 +12,10 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
+}
+#root {
+  height: 100%;
 }
 h1{
   font-size: 1.8rem;
@@ -47,7 +50,7 @@ button.primary{
 }
 input:hover,textarea:hover,button:hover{
   border: 0.1rem solid #203040;
-  background-color: #eebe3b;
+  
 }
 button.block{
   width: 100%;
@@ -115,7 +118,7 @@ a.brand{
 img{
   border-radius: 0.5rem;
   padding: 2rem;
-  background-color: #ffffff;
+  
 }
 img.medium{
  max-width: 29rem;
@@ -139,7 +142,7 @@ img.small{
   border: solid 0.1rem #c0c0c0;
   border-radius: 1rem;
   margin: 1rem;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
 }
 .card-body{
   padding: 1rem;
@@ -195,4 +198,18 @@ margin: 0.1rem;
 }
 .top-right:last-child{
   font-size: 3rem;
+}
+
+.form{
+  max-width: 60rem;  
+  margin: 0 auto;
+}
+.form > div{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label{
+ margin: 1rem 0;
+ display: block;
 }
