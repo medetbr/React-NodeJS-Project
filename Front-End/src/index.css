@@ -25,6 +25,22 @@ h2{
   font-size: 1.6rem;
   padding: 1rem 0;
 }
+.f-1{
+  font-size: 2.4rem;
+}
+.f-2{
+  font-size: 2.2rem;
+}
+.f-3{
+  font-size: 2.0rem;
+}
+.f-4{
+  font-size: 1.8rem;
+  
+}
+.m-1{
+  margin: 1rem;
+}
 ul{
   padding: 0;
   margin: 0;
@@ -201,7 +217,7 @@ margin: 0.1rem;
 }
 
 .form{
-  max-width: 60rem;  
+  max-width: 80rem;  
   margin: 0 auto;
 }
 .form > div{
@@ -212,4 +228,7 @@ margin: 0.1rem;
 .form label{
  margin: 1rem 0;
  display: block;
+}
+.form input{
+  height: 30px;
 }

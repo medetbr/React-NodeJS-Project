@@ -1,20 +1,35 @@
 
-import React, { useState } from "react";
-import {Link} from "react-router-dom"
-const SigninScreen = () => {
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
+import {useDispatch, useSelector} from "react-redux"
+import { signinAction } from "../redux/actions/userAction";
+
+const SigninScreen = (props) => {
  
+    const dispatch = useDispatch();
+
+    const signin = useSelector((state) => state.userSignin);
+    const { userInfo } = signin;
+    const redirect = props.location.search ? props.location.search.split('=')[1] : '/';
     const [email, setEmail] = useState('');
-    const [pasword, setPassword] = useState('');
+    const [password, setPassword] = useState('');
     const submitHandler = (e) => {
         e.preventDefault();
- }
+        dispatch(signinAction(email,password) )
+    }
+    
+    useEffect(() => {
+        if (userInfo) {
+            props.history.push(redirect)
+        }
+    },[props.history, redirect,userInfo])
     return (
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Sign In</h1>
+          <h1 className="f-3">Sign In</h1>
         </div>
-        <div>
+        <div className="f-4">
           <label htmlFor="email">E-Mail Address</label>
           <input
             type="email"
@@ -23,7 +38,7 @@ const SigninScreen = () => {
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
-        <div>
+        <div className="f-4">
           <label htmlFor="password">Password Address</label>
           <input
             type="password"
@@ -32,9 +47,9 @@ const SigninScreen = () => {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
               </div>
-              <div>
+              <div >
                   <label />
-                      <button className="primary" type="submit">Sign In
+                      <button className="primary f-2" type="submit">Sign In
                       </button>
                  
               </div>
