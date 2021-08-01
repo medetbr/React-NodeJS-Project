@@ -232,3 +232,23 @@ margin: 0.1rem;
 .form input{
   height: 30px;
 }
+.dropdown{
+  display: inline;
+  position: relative;
+}
+.dropdown-content{
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  margin: 0;
+  padding: 1rem;
+  z-index: 1;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+  background-color: #203040;
+
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}

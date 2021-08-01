@@ -43,8 +43,8 @@ function App() {
               userInfo ?
                 (
                   <div className="dropdown" > 
-                    <Link to="#">{userInfo.name}<i className="m-1 fas fa-caret-down"></i></Link>
-                    <ul>
+                    <Link to="#">{userInfo.name}<i className="m-1 fas fa-caret-down"></i>{' '}</Link>
+                    <ul className="dropdown-content f-4">
                       <Link to="#signout" onClick={signoutHandler}>Sign Out</Link>
                      
                     </ul>
@@ -56,7 +56,7 @@ function App() {
           </div>
         </header>
         <main>
-          <Route path="/cart/:id" component={CartScreen}></Route>
+          <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/product/:id" component={ProductScreen}></Route>
           <Route path="/" exact component={HomeScreen}></Route>

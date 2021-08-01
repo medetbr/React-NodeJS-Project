@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux"
 import { signinAction } from "../redux/actions/userAction";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
 const SigninScreen = (props) => {
  
     const dispatch = useDispatch();
 
     const signin = useSelector((state) => state.userSignin);
-    const { userInfo } = signin;
+    const { userInfo, loading, error } = signin;
     const redirect = props.location.search ? props.location.search.split('=')[1] : '/';
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -28,10 +30,14 @@ const SigninScreen = (props) => {
       <form className="form" onSubmit={submitHandler}>
         <div>
           <h1 className="f-3">Sign In</h1>
-        </div>
+                </div>
+                {loading && <LoadingBox />}
+              
+                {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div className="f-4">
           <label htmlFor="email">E-Mail Address</label>
-          <input
+                    <input
+                        className="f-4"
             type="email"
             placeholder="Enter e-mail"
             required
@@ -40,7 +46,8 @@ const SigninScreen = (props) => {
         </div>
         <div className="f-4">
           <label htmlFor="password">Password Address</label>
-          <input
+                    <input
+                         className="f-4"
             type="password"
             placeholder="Enter password"
             required
