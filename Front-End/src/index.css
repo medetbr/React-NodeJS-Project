@@ -252,3 +252,6 @@ margin: 0.1rem;
 .dropdown:hover .dropdown-content{
   display: block;
 }
+.loading{
+  display: block !important;
+}

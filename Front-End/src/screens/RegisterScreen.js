@@ -9,16 +9,24 @@ import MessageBox from "../components/MessageBox";
 const RegisterScreen = (props) => {
  
     const dispatch = useDispatch();
-
-    const register = useSelector((state) => state.userRegister);
-    const { userInfo, loading, error } = register;
     const redirect = props.location.search ? props.location.search.split('=')[1] : '/';
+    const register = useSelector((state) => state.userRegister);
+ 
+    const { userInfo, loading, error } = register;
     const [email, setEmail] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const submitHandler = (e) => {
-        e.preventDefault();
-        dispatch(registerAction(name,email,password) )
+      
+      e.preventDefault();
+        if (password===confirmPassword) {
+          dispatch(registerAction(name, email, password))
+      }
+        else {
+          alert("Password and confirm password are not match ")
+      }
+      
     }
     
     useEffect(() => {
@@ -56,13 +64,23 @@ const RegisterScreen = (props) => {
           ></input>
         </div>
         <div className="f-4">
-          <label htmlFor="password">Password Address</label>
+          <label htmlFor="password">Password</label>
                     <input
                          className="f-4"
             type="password"
             placeholder="Enter password"
             required
             onChange={(e) => setPassword(e.target.value)}
+          ></input>
+          </div>
+          <div className="f-4">
+          <label htmlFor="password">Confirm Password</label>
+                    <input
+                         className="f-4"
+            type="password"
+            placeholder="Enter confirm password"
+            required
+            onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
               </div>
               <div >
@@ -75,7 +93,7 @@ const RegisterScreen = (props) => {
               <div>
                   <label />
                   <div>
-                  <Link to="/signin" >Already have an account?</Link>
+                  <Link to={`/signin?redirect=${redirect}`} >Already have an account?</Link>
                   </div>
               </div>
       </form>
