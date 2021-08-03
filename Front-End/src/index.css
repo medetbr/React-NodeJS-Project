@@ -111,6 +111,8 @@ a:hover{
   align-items: flex-start;
 }
 .col-1{
+  top: 5.5rem;
+  position: relative;
   flex: 1 1 25rem;
 }
 .col-2{
@@ -255,3 +257,39 @@ margin: 0.1rem;
 .loading{
   display: block !important;
 }
+.checkout-steps > div{
+  
+  background-color: #c0c0c0;
+ 
+  color: #c0c0c0;
+  font-weight: bold;
+  flex: 1;
+  height: 1rem;
+  
+}
+
+.checkout-steps > div.active{
+ background-color: #007bff;
+  
+  color: #007bff;
+  
+  height: 1rem;
+}
+.checkout-steps > div:first-child{
+border-top-left-radius: 2rem;
+border-bottom-left-radius: 2rem;
+
+ }
+ .checkout-steps > div:last-child{
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  
+   }
+.checkout-steps span{
+  position: relative;
+    top: -1rem;
+    left: 15rem;
+    padding: 0 1rem ;
+  background-color: #ffffff;
+}
+
