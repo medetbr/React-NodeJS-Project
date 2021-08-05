@@ -229,11 +229,9 @@ margin: 0.1rem;
 }
 .form label{
  margin: 1rem 0;
- display: block;
+
 }
-.form input{
-  height: 30px;
-}
+
 .dropdown{
   display: inline;
   position: relative;
